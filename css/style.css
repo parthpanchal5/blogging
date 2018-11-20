@@ -1,17 +1,28 @@
 body, html{
   margin: 0;
   padding: 0;
-  font-family: 'Muli', sans-serif;
-  font-family: 'Montserrat', sans-serif;
-  background: #fffefe;
+  /* font-family: 'Muli', sans-serif;
+  font-family: 'Montserrat', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+
+  background: #f6fbfd;
 }
 /* Color Gradients */
 .gradient-1{background: linear-gradient(to bottom, #ffb347, #ffcc33);}
 .gradient-2{background: linear-gradient(to top, #dce35b, #45b649); }
 .gradient-3{background: linear-gradient(to top, #7f00ff, #e100ff); }
 .gradient-4{background: linear-gradient(to right, #ff416c, #ff4b2b);}
-.gradient-5{background: linear-gradient(to bottom, #36d1dc, #5b86e5); }
-.gradient-6{  background: linear-gradient(to top, #aaffa9, #11ffbd);}
+.gradient-5{background: linear-gradient(to bottom, #3691dc, #5b86e5); }
+.gradient-6{  background: linear-gradient(to top, #85f583, #11ffbd);}
+
+/* Rounded */
+.btn-rounded{
+  border-radius: 25px !important;
+}
+.input-rounded{
+  border-radius: 25px !important;
+}
+
 
 .words{
   font-size: 45px !important;
@@ -22,4 +33,41 @@ body, html{
 }
 .typed-cursor {
   transition: 0.8s ease-in;
+}
+#loginCard{
+  border-radius: 10px;
+}
+#loginCard:hover{
+  transition: 0.2s ease-in;
+}
+
+
+/* Media Queries */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #loginCard{
+    margin-top: 40px;
+  }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  #moto{
+    margin-top: 100px;
+  }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
 }

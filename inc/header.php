@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat|Muli" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
 <link rel="shortcut icon" href="img/blog.png" type="image/x-icon">  
