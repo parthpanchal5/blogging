@@ -10,7 +10,7 @@
 
 <div class="container pt-5">
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-md-block d-sm-none">
       <h2 class="animated fadeIn text-center" id="moto">The Place Where People Comes to <span class="words p-3"></span></h2>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -33,7 +33,7 @@
                 <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
               </div>
             </div>
-            <input type="submit" value="Login" class="btn btn-primary rounded mb-4 btn-block btn-rounded pl-4 pr-4">
+            <input type="submit" value="Login" class="btn gradient-5 text-white rounded mb-4 btn-block btn-rounded pl-4 pr-4">
           </form>
           <a href="forgot.php">Forgot Password?</a>
           <p class="mt-3">Don't have an account? <a href="signup.php">Sign Up</a></p>
