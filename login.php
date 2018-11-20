@@ -1,23 +1,23 @@
 <?php include 'inc/header.php';?>
 
-<nav class="navbar navbar-expand-lg navbar-light gradient-5 shadow p-1 mb-1">
+<nav class="navbar navbar-expand-lg gradient-5 shadow p-1 mb-1 navbar-default navbar-fixed-top">
   <div class="container">
-    <a class="navbar-brand" href="">
-      <img src="img/blog.png" class="d-inline-block align-top" alt="logo" style="border-radius: 20px;"><span style="margin: 20px; font-weight: bolder; font-size: 25px;" class="text-white">Blogger</span>
+    <a class="navbar-brand" href="login.php">
+      <img src="img/blog.png" class="d-inline-block align-top ml-3 rounded-circle" alt="logo" style="border-radius: 20px;"><span style="margin: 20px; font-weight: bolder; font-size: 25px;" class="text-white">Blogger</span>
     </a>
   </div>  
 </nav>
 
 <div class="container pt-5">
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-md-block d-sm-none">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-block">
       <h2 class="animated fadeIn text-center" id="moto">The Place Where People Comes to <span class="words p-3"></span></h2>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-      <div class="card bg-white shadow p-1 mb-1 text-black mb-5" id="loginCard">
+      <div class="card bg-white shadow p-1 mb-1 text-black mb-5 animated fadeIn" id="card-hover">
         <img class="card-img-top" alt="">
         <div class="card-body">
-          <h4 class="card-title text-center">Login</h4>
+          <h4 class="card-title text-center">Login</h4><hr>
           <form action="#" method="POST">
             <div class="form-group">
               <label for="Username or Email">Username or email</label>
@@ -37,7 +37,6 @@
           </form>
           <a href="forgot.php">Forgot Password?</a>
           <p class="mt-3">Don't have an account? <a href="signup.php">Sign Up</a></p>
-          
         </div>
       </div>
     </div>

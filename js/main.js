@@ -2,11 +2,11 @@ $(document).ready(function(){
   console.log('JS loaded');
   
   // Login card hover
-  $('#loginCard').mouseover(function(){
-    $('#loginCard').addClass('shadow-lg');
+  $('#card-hover').mouseover(function(){
+    $('#card-hover').addClass('shadow-lg');
   });
-  $('#loginCard').mouseout(function(){
-    $('#loginCard').removeClass('shadow-lg');
+  $('#card-hover').mouseout(function(){
+    $('#card-hover').removeClass('shadow-lg');
   });
 
   // Type js
@@ -23,5 +23,9 @@ $(document).ready(function(){
     loop: true
   });
 
+  $('.carousel').carousel({
+    interval: 1500,
+    pause: false
+  });
 
 });
