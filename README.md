@@ -1,7 +1,6 @@
 # blogging
 A PHP app for Blogging or a small Social Network 
-
-<--- Features --->
+# <--- Features --->
 
 1. Individual User Account Management.
 2. Signup, Login, and Forget panel for users.
