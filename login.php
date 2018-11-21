@@ -21,19 +21,19 @@
           <form action="#" method="POST">
             <div class="form-group">
               <label for="Username or Email">Username or email</label>
-              <input type="text" class="form-control input-rounded" placeholder="Username or Email" autofocus>
+              <input type="text" class="form-control input-rounded" name="userinput" placeholder="Username or Email" autofocus>
             </div>
             <div class="form-group">
               <label for="Password">Password</label>
-              <input type="password" class="form-control input-rounded" placeholder="Password">
+              <input type="password" class="form-control input-rounded" name="password" placeholder="Password">
             </div>
             <div class="form-group">
               <div class="custom-control custom-checkbox mr-sm-2">
-                <input type="checkbox" class="custom-control-input" id="customControlAutosizing" checked>
+                <input type="checkbox" class="custom-control-input" name="remember_me" id="customControlAutosizing" checked>
                 <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
               </div>
             </div>
-            <input type="submit" value="Login" class="btn gradient-5 text-white rounded mb-4 btn-block btn-rounded pl-4 pr-4">
+            <input type="submit" value="Login" name="login" class="btn gradient-5 text-white rounded mb-4 btn-block btn-rounded">
           </form>
           <a href="forgot.php">Forgot Password?</a>
           <p class="mt-3">Don't have an account? <a href="signup.php">Sign Up</a></p>

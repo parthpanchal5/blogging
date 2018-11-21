@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3"></div>
     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-      <div class="card bg-white shadow p-1 text-black mb-3  mt-5 pt-2 animated slideInDown" id="card-hover">
+      <div class="card bg-white shadow p-1 text-black mb-3  mt-5 pt-2 animated zoomInUp" id="card-hover">
         <img class="card-img-top" alt="">
         <div class="card-body">
           <h4 class="card-title text-center">Password Recovery</h4><hr>
@@ -29,7 +29,7 @@
               <label for="Confirm Password">Confirm New Password</label>
               <input type="password" class="form-control input-rounded" placeholder="Confirm New Password">
             </div>
-            <input type="submit" value="Reset Password" class="btn gradient-4 text-white rounded mb-4 btn-block btn-rounded pl-4 pr-4 mt-4">
+            <input type="submit" value="Reset Password" class="btn gradient-4 text-white rounded mb-4 btn-block btn-rounded mt-4">
           </form>
           <p><a href="login.php">Back to Login</a></p>
         </div>

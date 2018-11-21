@@ -37,17 +37,17 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for="firstname">Firstname</label>
-                <input type="text" class="form-control input-rounded" placeholder="Firstname" autocomplete="off" autofocus>
+                <input type="text" class="form-control input-rounded" name="firstname" placeholder="Firstname" autocomplete="off" autofocus>
               </div>
               <div class="form-group col-md-6">
                 <label for="lastname">Lastname</label>
-                <input type="text" class="form-control input-rounded" autocomplete="off" placeholder="Lastname">
+                <input type="text" class="form-control input-rounded" name="lastname" autocomplete="off" placeholder="Lastname">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-12">
                 <label for="email">Email</label>
-                <input type="text" name="email" placeholder="Email" class="form-control input-rounded" autocomplete="off">
+                <input type="text" name="email" placeholder="Email" name="email" class="form-control input-rounded" autocomplete="off">
               </div>
             </div>
             <label for="Gender">Select Your Gender :</label>
@@ -75,7 +75,7 @@
                 <input type="password" name="confirm_pass" placeholder="Confirm Password" class="form-control input-rounded" autocomplete="off">
               </div>
             </div>
-            <input type="submit" value="Signup" class="btn gradient-5 text-white rounded mb-4 btn-block btn-rounded pl-4 pr-4 mt-2">
+            <input type="submit" value="Signup" name="signup" class="btn gradient-5 text-white btn-block rounded mb-4 btn-rounded mt-2">
           </form>
           <p class="mt-3">Already Have an account? <a href="login.php">Login</a></p>
         </div>
