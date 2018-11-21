@@ -14,6 +14,7 @@ body, html{
 .gradient-4{background: linear-gradient(to right, #ff416c, #ff4b2b);}
 .gradient-5{background: linear-gradient(to bottom, #3691dc, #5b86e5); }
 .gradient-6{  background: linear-gradient(to top, #85f583, #11ffbd);}
+.gradient-7{  background: linear-gradient(to top, #4aaf1b, #bffa77);}
 
 /* Rounded */
 .btn-rounded{
@@ -47,14 +48,16 @@ body, html{
 .typed-cursor {
   transition: 0.8s ease-in;
 }
+
+/* Card hover effect */
 #card-hover{
   border-radius: 10px;
-  transition: 0.5s ease-out;
+  transition: 0.3s ease-out;
 }
 #card-hover:hover{
   transition: 0.2s ease-in;
 }
-
+/*  */
 
 /* Media Queries */
 /* Extra small devices (phones, 600px and down) */

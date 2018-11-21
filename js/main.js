@@ -28,4 +28,6 @@ $(document).ready(function(){
     pause: false
   });
 
+  // Date Picker
+  $('#datepicker').datepicker('show');
 });

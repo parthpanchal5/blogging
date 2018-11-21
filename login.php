@@ -1,5 +1,6 @@
 <?php include 'inc/header.php';?>
 
+<!--Navbar-->
 <nav class="navbar navbar-expand-lg gradient-5 shadow p-1 mb-1 animated fadeIn navbar-default fixed-top">
   <div class="container">
     <a class="navbar-brand" href="login.php">
@@ -18,18 +19,18 @@
         <img class="card-img-top" alt="">
         <div class="card-body">
           <h4 class="card-title text-center">Login</h4><hr>
-          <form action="#" method="POST">
+          <form action="#" method="GET">
             <div class="form-group">
-              <label for="Username or Email">Username or email</label>
-              <input type="text" class="form-control input-rounded" name="userinput" placeholder="Username or Email" autofocus>
+              <!-- <label for="Username or Email">Username or email</label> -->
+              <input type="text" class="form-control mt-3 mb-3 input-rounded" name="userinput" placeholder="Username or Email" autofocus>
             </div>
             <div class="form-group">
-              <label for="Password">Password</label>
+              <!-- <label for="Password">Password</label> -->
               <input type="password" class="form-control input-rounded" name="password" placeholder="Password">
             </div>
             <div class="form-group">
               <div class="custom-control custom-checkbox mr-sm-2">
-                <input type="checkbox" class="custom-control-input" name="remember_me" id="customControlAutosizing" checked>
+                <input type="checkbox" class="custom-control-input" name="remember_me" id="customControlAutosizing" >
                 <label class="custom-control-label" for="customControlAutosizing">Remember me</label>
               </div>
             </div>

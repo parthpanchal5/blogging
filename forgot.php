@@ -1,5 +1,6 @@
 <?php include 'inc/header.php';?>
 
+<!--Navbar-->
 <nav class="navbar navbar-expand-lg gradient-4 shadow p-1 mb-1 navbar-default fixed-top animated slideInDown">
   <div class="container">
     <a class="navbar-brand" href="login.php">
@@ -18,15 +19,15 @@
           <h4 class="card-title text-center">Password Recovery</h4><hr>
           <form action="#" method="POST">
             <div class="form-group">
-              <label for="Email">Email</label>
+              <!-- <label for="Email">Email</label> -->
               <input type="text" class="form-control input-rounded" autocomplete="off" placeholder="Registered Email" autofocus>
             </div>
             <div class="form-group">
-              <label for="Password">New Password</label>
+              <!-- <label for="Password">New Password</label> -->
               <input type="password" class="form-control input-rounded" placeholder="New Password">
             </div>
             <div class="form-group">
-              <label for="Confirm Password">Confirm New Password</label>
+              <!-- <label for="Confirm Password">Confirm New Password</label> -->
               <input type="password" class="form-control input-rounded" placeholder="Confirm New Password">
             </div>
             <input type="submit" value="Reset Password" class="btn gradient-4 text-white rounded mb-4 btn-block btn-rounded mt-4">
