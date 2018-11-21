@@ -1,6 +1,6 @@
 <?php include 'inc/header.php';?>
 
-<nav class="navbar navbar-expand-lg navbar-light gradient-5 shadow p-1 mb-1">
+<nav class="navbar navbar-expand-lg navbar-light gradient-5 shadow p-1 mb-1 fixed-top animated fadeIn">
   <div class="container">
     <a class="navbar-brand" href="login.php">
       <img src="img/blog.png" class="d-inline-block align-top ml-3 rounded-circle" alt="logo" ><span style="margin: 20px; font-weight: bolder; font-size: 25px;" class="text-white">Blogger</span>
@@ -8,7 +8,7 @@
   </div>  
 </nav>
 
-<div class="container pt-5">
+<div class="container pt-5 mt-5">
   <div class="row">
     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-block  mt-5 pt-5">
       <div id="carouselExampleSlidesOnly" class="carousel slide shadow-lg animated fadeIn" data-ride="carousel">
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-      <div class="card bg-white shadow p-1 mb-1 text-black mb-5 animated fadeIn" id="card-hover">
+      <div class="card bg-white shadow p-1 mb-1 text-black mb-5 pt-3 mt-2 animated fadeIn" id="card-hover">
         <img class="card-img-top" alt="">
         <div class="card-body">
           <h4 class="card-title text-center">Sign up</h4><hr>

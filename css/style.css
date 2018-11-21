@@ -23,6 +23,19 @@ body, html{
   border-radius: 25px !important;
 }
 
+/* Slanted div */
+.block::before{
+  content: '';
+  background: linear-gradient(to right, #ff416c, #ff4b2b);  
+  position: absolute;
+  top: 8.5%;
+  left: 28.4%;
+  width: 45%;
+  height: 91.5%;
+  transform: skew(129deg);
+  z-index: 0;
+  overflow: hidden;
+}
 
 .words{
   font-size: 45px !important;
@@ -61,6 +74,8 @@ body, html{
   #moto{
     margin-top: 100px;
   }
+  
+  
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
