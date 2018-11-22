@@ -37,7 +37,7 @@
             <input type="submit" value="Login" name="login" class="btn gradient-5 text-white rounded mb-4 btn-block btn-rounded">
           </form>
           <a href="forgot.php">Forgot Password?</a>
-          <p class="mt-3">Don't have an account? <a href="signup.php">Sign Up</a></p>
+          <p class="mt-3">New to Blogger? <a href="signup.php">Sign Up</a></p>
         </div>
       </div>
     </div>

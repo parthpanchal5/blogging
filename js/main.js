@@ -23,11 +23,16 @@ $(document).ready(function(){
     loop: true
   });
 
+  // Carousel
   $('.carousel').carousel({
     interval: 1500,
     pause: false
   });
-
+  
   // Date Picker
   $('#datepicker').datepicker('show');
+
+  // Form Validations
+  $("#signUpForm").validate();
+
 });

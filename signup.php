@@ -34,7 +34,7 @@
         <img class="card-img-top" alt="">
         <div class="card-body">
           <h4 class="card-title text-center">Sign up</h4><hr>
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET">
+          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" id="signUpForm">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <!-- <label for="firstname">Firstname</label> -->
@@ -87,7 +87,7 @@
             </div>
             <input type="submit" value="Signup" name="signup" class="btn gradient-5 text-white btn-block rounded mb-4 btn-rounded mt-2">
           </form>
-          <p class="mt-3">Already Have an account? <a href="login.php">Login</a></p>
+          <p class="mt-3">I'm already a Blogger? <a href="login.php">Login</a></p>
         </div>
       </div>
     </div>
