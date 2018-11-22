@@ -1,7 +1,7 @@
 <?php include 'inc/header.php';?>
 
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light gradient-5 shadow p-1 mb-1 fixed-top animated fadeIn">
+<nav class="navbar navbar-expand-lg navbar-light gradient-5 shadow p-1 mb-1 fixed-top">
   <div class="container">
     <a class="navbar-brand" href="login.php">
       <img src="img/blog.png" class="d-inline-block align-top ml-3 rounded-circle" alt="logo" ><span style="margin: 20px; font-weight: bolder; font-size: 25px;" class="text-white">Blogger</span>
