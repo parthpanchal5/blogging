@@ -13,7 +13,7 @@
   <div class="row">
     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3"></div>
     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-      <div class="card bg-white shadow p-1 text-black mb-3  mt-5 pt-2 animated zoomInUp" id="card-hover">
+      <div class="card bg-white shadow p-1 text-black mb-3  mt-5 pt-2 animated fadeIn" id="card-hover">
         <img class="card-img-top" alt="">
         <div class="card-body">
           <h4 class="card-title text-center">Password Recovery</h4><hr>
