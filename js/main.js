@@ -32,6 +32,10 @@ $(document).ready(function(){
   // Date Picker
   $('#datepicker').datepicker('show');
 
+  // Tooltip
+  $('#example').tooltip({
+    animation: true
+  });
   // Form Validations
   $("#signUpForm").validate();
 

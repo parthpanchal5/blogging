@@ -20,15 +20,15 @@
           <form action="#" method="POST">
             <div class="form-group">
               <!-- <label for="Email">Email</label> -->
-              <input type="text" class="form-control input-rounded" autocomplete="off" placeholder="Registered Email" autofocus>
+              <input type="text" class="form-control input-rounded" autocomplete="off" placeholder="Registered Email" autofocus data-toggle="tooltip" data-placement="top" title="Enter your registered email">
             </div>
             <div class="form-group">
               <!-- <label for="Password">New Password</label> -->
-              <input type="password" class="form-control input-rounded" placeholder="New Password">
+              <input type="password" class="form-control input-rounded" placeholder="New Password" data-toggle="tooltip" data-placement="top" title="Set new password">
             </div>
             <div class="form-group">
               <!-- <label for="Confirm Password">Confirm New Password</label> -->
-              <input type="password" class="form-control input-rounded" placeholder="Confirm New Password">
+              <input type="password" class="form-control input-rounded" placeholder="Confirm New Password" data-toggle="tooltip" data-placement="top" title="Confirm your new password">
             </div>
             <input type="submit" value="Reset Password" class="btn gradient-4 text-white rounded mb-4 btn-block btn-rounded mt-4">
           </form>

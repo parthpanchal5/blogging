@@ -22,11 +22,11 @@
           <form action="#" method="GET">
             <div class="form-group">
               <!-- <label for="Username or Email">Username or email</label> -->
-              <input type="text" class="form-control mt-3 mb-3 input-rounded" name="userinput" placeholder="Username or Email" autofocus>
+              <input type="text" class="form-control mt-3 mb-3 input-rounded" name="userinput" placeholder="Username or Email" autofocus data-toggle="tooltip" data-placement="top" title="Username or email">
             </div>
             <div class="form-group">
               <!-- <label for="Password">Password</label> -->
-              <input type="password" class="form-control input-rounded" name="password" placeholder="Password">
+              <input type="password" class="form-control input-rounded" name="password" placeholder="Password" data-toggle="tooltip" data-placement="top" title="Password">
             </div>
             <div class="form-group">
               <div class="custom-control custom-checkbox mr-sm-2">

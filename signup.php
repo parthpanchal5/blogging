@@ -38,55 +38,57 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <!-- <label for="firstname">Firstname</label> -->
-                <input type="text" class="form-control input-rounded" name="firstname" placeholder="Firstname" autocomplete="off" autofocus>
+                <input type="text" class="form-control input-rounded" name="firstname" placeholder="Firstname" autocomplete="off" autofocus data-toggle="tooltip" data-placement="top" title="Firstname">
               </div>
               <div class="form-group col-md-6">
                 <!-- <label for="lastname">Lastname</label> -->
-                <input type="text" class="form-control input-rounded" name="lastname" autocomplete="off" placeholder="Lastname">
+                <input type="text" class="form-control input-rounded" name="lastname" autocomplete="off" placeholder="Lastname" data-toggle="tooltip" data-placement="top" title="Lastname">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-12">
                 <!-- <label for="email">Email</label> -->
-                <input type="text" placeholder="Email" name="email" class="form-control input-rounded " autocomplete="off">
+                <input type="text" placeholder="Email" name="email" class="form-control input-rounded " autocomplete="off" data-toggle="tooltip" data-placement="top" title="Email">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-12">
                 <!-- <label for="email">Username</label> -->
-                <input type="text" name="username" placeholder="Username" class="form-control  input-rounded" autocomplete="off">
+                <input type="text" name="username" placeholder="Username" class="form-control  input-rounded" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Username">
               </div>
             </div>
-            <div class="form-row">
-              
-            </div>
+            
             <!-- <label for="Gender">Select Your Gender :</label> -->
             <div class="form-row">
-              <div class="form-group col-md-6">
-                <div class="custom-control custom-radio">
+              <div class="form-group col-md-3">
+                <div class="custom-control custom-radio data-toggle="tooltip" data-placement="top" title="Select your gender">
                   <input type="radio" id="customRadio1" value="Male" name="gender" class="custom-control-input" checked="checked">
                   <label class="custom-control-label" for="customRadio1">Male</label>
                 </div>
               </div>
-              <div class="form-group col-md-6">
-                <div class="custom-control custom-radio">
+              <div class="form-group col-md-3">
+                <div class="custom-control custom-radio" data-toggle="tooltip" data-placement="top" title="Select your gender">
                   <input type="radio" id="customRadio2" value="Female" name="gender" class="custom-control-input">
                   <label class="custom-control-label" for="customRadio2">Female</label>
                 </div>
+              </div>
+              <div class="form-group col-md-6">
+              <input type="date" name="birthday" id="date" class="form-control input-rounded" data-toggle="tooltip" data-placement="top" title="Birthday" min="1997-05-06">
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <!-- <label for="password">Password</label> -->
-                <input type="password" name="password" placeholder="Password" class="form-control input-rounded" autocomplete="off">
+                <input type="password" name="password" placeholder="Password" class="form-control input-rounded" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Password">
               </div>
               <div class="form-group col-md-6">
                 <!-- <label for="confirm_pass">Confirm Password</label> -->
-                <input type="password" name="confirm_pass" placeholder="Confirm Password" class="form-control input-rounded" autocomplete="off">
+                <input type="password" name="confirm_pass" placeholder="Confirm Password" class="form-control input-rounded" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Confirm your password">
               </div>
             </div>
             <input type="submit" value="Signup" name="signup" class="btn gradient-5 text-white btn-block rounded mb-4 btn-rounded mt-2">
           </form>
+          <p class="text-secondary" style="font-size: 16px;">By signing up, you agree to our Terms, Data Policy and Cookies Policy.</p>
           <p class="mt-3">I'm already a Blogger? <a href="login.php">Login</a></p>
         </div>
       </div>
