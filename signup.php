@@ -79,7 +79,7 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <!-- <label for="password">Password</label> -->
-                <input type="password" name="password" placeholder="Password" class="form-control input-rounded" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Password">
+                <input type="password" name="password" placeholder="Password" class="form-control input-rounded" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Set a password">
               </div>
               <div class="form-group col-md-6">
                 <!-- <label for="confirm_pass">Confirm Password</label> -->
