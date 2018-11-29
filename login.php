@@ -19,7 +19,7 @@
         <img class="card-img-top" alt="">
         <div class="card-body">
           <h4 class="card-title text-center">Login</h4><hr>
-          <form action="#" method="GET">
+          <form action="home.php" method="GET">
             <div class="form-group">
               <!-- <label for="Username or Email">Username or email</label> -->
               <input type="text" class="form-control mt-3 mb-3 input-rounded" name="userinput" placeholder="Username or Email" autofocus data-toggle="tooltip" data-placement="top" title="Username or email">

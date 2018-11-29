@@ -34,7 +34,7 @@
         <img class="card-img-top" alt="">
         <div class="card-body">
           <h4 class="card-title text-center">Sign up</h4><hr>
-          <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" id="signUpForm">
+          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="GET" id="signUpForm">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <!-- <label for="firstname">Firstname</label> -->

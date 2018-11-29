@@ -48,7 +48,13 @@ body, html{
 .typed-cursor {
   transition: 0.8s ease-in;
 }
-
+/* User search button */
+#userSearch{
+  position: absolute;
+  left: 46%;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
 /* Card hover effect */
 #card-hover{
   border-radius: 10px;
