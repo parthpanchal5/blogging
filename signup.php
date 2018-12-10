@@ -4,6 +4,7 @@
   // Check for submit
   if(isset($_POST['signup'])){
     // init err vars
+    echo "sdfd";
     $firstname_err = $lastname_err = $email_err = $username_err = $gender_err = $birthday_err = $phone_err = $password_err = $confirmpass_err = $global_err = '';
 
     $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
@@ -15,6 +16,7 @@
     $phone = mysqli_real_escape_string($conn, $_POST['phone']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $confirmpass = mysqli_real_escape_string($conn, $_POST['confirm_pass']);
+    $userip = $_SERVER['REMOTE_ADDR'];
 
     // Check for empty vars
     if(empty($firstname) && empty($lastname) && empty($email) && empty($username) && empty($birthday) && empty($phone) && empty($password) && empty($confirmpass)){
@@ -24,7 +26,7 @@
                       </button>
                       <strong>All fields are required</strong>
                     </div>';
-    }else{
+    }
       if(empty($firstname)){
         $firstname_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -88,45 +90,11 @@
                               </button>
                               <strong>Confirm pass is required</strong>
                             </div>';
-      }else{
-        if(!preg_match("/^[a-zA-Z]*$/", $firstname) || !preg_match("/^[a-zA-Z]*$/", $lastname)){
-          $firstname_err =  "Firstname is invalid";
-          $lastname_err = "Lastname is invalid";
-        }else{
-          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-            $email_err = "Email is invalid";                        
-          }else{
-            if(strlen($password) < 8){
-              $password_err = "Password must be 8 characters long";
-            }else{
-              if(!preg_match("/^[0-9]{10}$/", $phone)){
-                $phone_err = "Phone is invalid";
-            }else{
-              if($confirm_password != $password){
-                $confirm_password_err = "Password Mismatch";      
-              }else{
-                  $sql = "SELECT * FROM users WHERE username = '$username'";
-                  $result = mysqli_query($conn, $sql);
-                  $countRows = mysqli_num_rows($result);
-
-                  if($countRows > 0){
-                    $username_err = "Username is not available";
-                  }else{
-                    $hashedPass = password_hash($password, PASSWORD_DEFAULT);
-                    // Insert user in DB
-                    $sql = "INSERT INTO users (firstname, lastname, email, username, phone, password) VALUES ('$firstname', '$lastname', '$email', '$address','$username', '$phone', '$hashedPass')";
-                    echo $sql;
-                    $result = mysqli_query($conn, $sql);
-                    header("Location:login.php");
-                  }
-                }
-              }
-            }
-          }
-        }
       }
+      if(!preg_match('/^[a-zA-Z]*$/', $firstname)){
+        $firstname_err =  "Firstname is invalid";
+      } 
     }
-  }
 
 
 ?>
@@ -134,13 +102,13 @@
 <?php include 'inc/header.php';?>
 
 <!--Navbar-->
-<nav class="navbar navbar-expand-lg navbar-light gradient-5 shadow p-1 mb-1 fixed-top">
+<!-- <nav class="navbar navbar-expand-lg navbar-light gradient-5 shadow p-1 mb-1 fixed-top">
   <div class="container">
     <a class="navbar-brand" href="login.php">
       <img src="img/blog.png" class="d-inline-block align-top ml-3 rounded-circle" alt="logo" ><span style="margin: 20px; font-weight: bolder; font-size: 25px;" class="text-white">Blogger</span>
     </a>
   </div>  
-</nav>
+</nav> -->
 
 <div class="container pt-5 mt-5 mb-4">
   <div class="row">
@@ -173,7 +141,7 @@
               <div class="form-group col-md-6">
                 <!-- <label for="firstname">Firstname</label> -->
                 <input type="text" class="form-control input-rounded <?php echo (!empty($firstname_err)) ? 'is-invalid' : ''; ?>" name="firstname" placeholder="Firstname" id="firstname" autocomplete="off" autofocus data-toggle="tooltip" data-placement="top" title="Firstname" value="<?php echo $firstname; ?>">
-                <?php echo '<br>'.$firstname_err; ?>
+                <span class="text-danger"><?php echo '<br>'.$firstname_err; ?></span>
               </div>
               <div class="form-group col-md-6">
                 <!-- <label for="lastname">Lastname</label> -->
