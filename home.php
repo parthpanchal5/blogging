@@ -31,7 +31,7 @@
       <div class="card-header bg-white" style="padding: 5px 0px 6px 10px !important;"><img src="img/userprofile/maleavatar.jpg" alt="maleavatar" height="50" class="mr-2">Parth Panchal</div><br>
       <img class="card-img-top" src="img/pic1.jpeg" alt="Card image cap">
         <div class="card-body">
-          <i class="fas fa-heart"></i>
+          <i class="far fa-heart fa-2x" style="cursor: pointer;" id="like"></i>
         </div>
       </div>
     </div>

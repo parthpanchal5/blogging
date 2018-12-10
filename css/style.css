@@ -29,11 +29,11 @@ body, html{
   content: '';
   background: linear-gradient(to right, #ff416c, #ff4b2b);  
   position: absolute;
-  top: 8.5%;
-  left: 28.4%;
-  width: 45%;
-  height: 91.5%;
-  transform: skew(129deg);
+  top: 6%;
+  left: 50%;
+  width: 50%;
+  height: 94%;
+  transform: skew(0deg);
   z-index: 0;
   overflow: hidden;
 }
@@ -51,9 +51,12 @@ body, html{
 /* User search button */
 #userSearch{
   position: absolute;
-  left: 46%;
+  left: 47%;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
+}
+strong{
+  font-size: 13px;
 }
 /* Card hover effect */
 #card-hover{

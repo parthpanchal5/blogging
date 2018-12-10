@@ -8,13 +8,14 @@
     </a>
   </div>  
 </nav>
-<div class="block d-none d-sm-block"></div>
+
+
+<div class="block"></div>
 <div class="container pt-5">
   <div class="row">
     <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3"></div>
-    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-      <div class="card bg-white shadow p-1 text-black mb-3  mt-5 pt-2 animated fadeIn" id="card-hover">
-        <img class="card-img-top" alt="">
+    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" style="margin-top: 15%;">
+      <div class="card bg-white shadow p-1 text-black mt-5 p-1 animated " id="card-hover">
         <div class="card-body">
           <h4 class="card-title text-center">Password Recovery</h4><hr>
           <form action="#" method="POST">
@@ -39,6 +40,7 @@
     </div>
   </div>
 </div>
+
 <?php include 'inc/footer.php';?>
 
 

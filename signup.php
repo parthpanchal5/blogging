@@ -1,3 +1,136 @@
+<?php 
+  include 'config/conn.php';
+
+  // Check for submit
+  if(isset($_POST['signup'])){
+    // init err vars
+    $firstname_err = $lastname_err = $email_err = $username_err = $gender_err = $birthday_err = $phone_err = $password_err = $confirmpass_err = $global_err = '';
+
+    $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
+    $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
+    $birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
+    $phone = mysqli_real_escape_string($conn, $_POST['phone']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    $confirmpass = mysqli_real_escape_string($conn, $_POST['confirm_pass']);
+
+    // Check for empty vars
+    if(empty($firstname) && empty($lastname) && empty($email) && empty($username) && empty($birthday) && empty($phone) && empty($password) && empty($confirmpass)){
+      $global_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <strong>All fields are required</strong>
+                    </div>';
+    }else{
+      if(empty($firstname)){
+        $firstname_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Firstname is required</strong>
+                          </div>';
+      }if(empty($lastname)){
+        $lastname_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Lastname is required</strong>
+                          </div>';
+      }if(empty($email)){
+        $email_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        <strong>Email is required</strong>
+                      </div>';
+      }if(empty($username)){
+        $username_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          <strong>Username is required</strong>
+                        </div>';
+      }if(empty($gender)){
+        $gender_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
+                          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                          <strong>Gender is required</strong>
+                        </div>';
+      }if(empty($birthday)){
+        $birthday_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Birthdate is required</strong>
+                          </div>';
+      }if(empty($phone)){
+        $phone_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Phone no is required</strong>
+                          </div>';
+      }if(empty($password)){
+        $password_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Password is required</strong>
+                          </div>';
+      }if(empty($confirmpass)){
+        $confirmpass_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeIn" role="alert">
+                              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                              <strong>Confirm pass is required</strong>
+                            </div>';
+      }else{
+        if(!preg_match("/^[a-zA-Z]*$/", $firstname) || !preg_match("/^[a-zA-Z]*$/", $lastname)){
+          $firstname_err =  "Firstname is invalid";
+          $lastname_err = "Lastname is invalid";
+        }else{
+          if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $email_err = "Email is invalid";                        
+          }else{
+            if(strlen($password) < 8){
+              $password_err = "Password must be 8 characters long";
+            }else{
+              if(!preg_match("/^[0-9]{10}$/", $phone)){
+                $phone_err = "Phone is invalid";
+            }else{
+              if($confirm_password != $password){
+                $confirm_password_err = "Password Mismatch";      
+              }else{
+                  $sql = "SELECT * FROM users WHERE username = '$username'";
+                  $result = mysqli_query($conn, $sql);
+                  $countRows = mysqli_num_rows($result);
+
+                  if($countRows > 0){
+                    $username_err = "Username is not available";
+                  }else{
+                    $hashedPass = password_hash($password, PASSWORD_DEFAULT);
+                    // Insert user in DB
+                    $sql = "INSERT INTO users (firstname, lastname, email, username, phone, password) VALUES ('$firstname', '$lastname', '$email', '$address','$username', '$phone', '$hashedPass')";
+                    echo $sql;
+                    $result = mysqli_query($conn, $sql);
+                    header("Location:login.php");
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+?>
+
 <?php include 'inc/header.php';?>
 
 <!--Navbar-->
@@ -11,8 +144,8 @@
 
 <div class="container pt-5 mt-5 mb-4">
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 d-none d-sm-block  mt-5 pt-5">
-      <div id="carouselExampleSlidesOnly" class="carousel slide shadow-lg animated fadeIn" data-ride="carousel">
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 d-none d-sm-block  mt-5 pt-5">
+      <div id="carouselExampleSlidesOnly" class="carousel slide shadow-lg animated " data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item">
             <img class="d-block w-100" src="img/pic1.jpeg" alt="First slide">
@@ -29,32 +162,41 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-      <div class="card bg-white shadow p-1 mb-1 text-black mb-3 pt-3 mt-2 animated fadeIn" id="card-hover">
-        <img class="card-img-top" alt="">
+
+    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <div class="card bg-white shadow p-1 mb-1 text-black mb-3 pt-3 mt-2 animated " id="card-hover">
         <div class="card-body">
-          <h4 class="card-title text-center">Sign up</h4><hr>
-          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="GET" id="signUpForm">
+          <h4 class="card-title text-center">Sign up</h4><?php echo $global_err; ?><hr>
+          
+          <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" id="signUpForm">
             <div class="form-row">
               <div class="form-group col-md-6">
                 <!-- <label for="firstname">Firstname</label> -->
-                <input type="text" class="form-control input-rounded" name="firstname" placeholder="Firstname" autocomplete="off" autofocus data-toggle="tooltip" data-placement="top" title="Firstname">
+                <input type="text" class="form-control input-rounded <?php echo (!empty($firstname_err)) ? 'is-invalid' : ''; ?>" name="firstname" placeholder="Firstname" id="firstname" autocomplete="off" autofocus data-toggle="tooltip" data-placement="top" title="Firstname" value="<?php echo $firstname; ?>">
+                <?php echo '<br>'.$firstname_err; ?>
               </div>
               <div class="form-group col-md-6">
                 <!-- <label for="lastname">Lastname</label> -->
-                <input type="text" class="form-control input-rounded" name="lastname" autocomplete="off" placeholder="Lastname" data-toggle="tooltip" data-placement="top" title="Lastname">
+                <input type="text" class="form-control input-rounded <?php echo (!empty($lastname_err)) ? 'is-invalid' : ''; ?>" name="lastname" autocomplete="off" placeholder="Lastname" id="lastname" data-toggle="tooltip" data-placement="top" title="Lastname" value="<?php echo $lastname; ?>">
+                <?php echo '<br>'.$lastname_err; ?>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-12">
                 <!-- <label for="email">Email</label> -->
-                <input type="text" placeholder="Email" name="email" class="form-control input-rounded " autocomplete="off" data-toggle="tooltip" data-placement="top" title="Email">
+                <input type="text" placeholder="Email" name="email" class="form-control input-rounded <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" autocomplete="off" id="email" data-toggle="tooltip" data-placement="top" title="Email" value="<?php echo $email; ?>">
+                <?php echo '<br>'.$email_err; ?>
               </div>
             </div>
             <div class="form-row">
-              <div class="form-group col-md-12">
+              <div class="form-group col-md-6">
                 <!-- <label for="email">Username</label> -->
-                <input type="text" name="username" placeholder="Username" class="form-control  input-rounded" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Username">
+                <input type="text" name="username" placeholder="Username" class="form-control input-rounded <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" id="username" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Username" value="<?php echo $username; ?>">
+                <?php echo '<br>'.$username_err; ?>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="date" name="birthday" id="date" class="form-control input-rounded <?php echo (!empty($birthday_err)) ? 'is-invalid' : ''; ?>" id="birthday" data-toggle="tooltip" data-placement="top" title="Birthday" min="1997-05-06" value="<?php echo $birthday; ?>">
+                <?php echo '<br>'.$birthday_err; ?>
               </div>
             </div>
             
@@ -71,19 +213,25 @@
                   <input type="radio" id="customRadio2" value="Female" name="gender" class="custom-control-input">
                   <label class="custom-control-label" for="customRadio2">Female</label>
                 </div>
+                <?php echo '<br>'.$gender_err; ?>
               </div>
               <div class="form-group col-md-6">
-              <input type="date" name="birthday" id="date" class="form-control input-rounded" data-toggle="tooltip" data-placement="top" title="Birthday" min="1997-05-06">
+                <input type="text" name="phone" id="phone" placeholder="Phone no" class="form-control input-rounded <?php echo (!empty($phone_err)) ? 'is-invalid' : ''; ?>" id="phone" data-toggle="tooltip" data-placement="top" title="Birthday" max="10" value="<?php echo $phone; ?>">
+                <?php echo '<br>'.$phone_err; ?>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
                 <!-- <label for="password">Password</label> -->
-                <input type="password" name="password" placeholder="Password" class="form-control input-rounded" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Set a password">
+                <input type="password" name="password" placeholder="Password" class="form-control input-rounded <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" id="password" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Set a password" value="<?php echo $password; ?>">
+                <small id="passwordHelpInline" class="text-muted ml-3">Must be 8-20 characters long.</small>
+
+                <?php echo '<br>'.$password_err; ?>
               </div>
               <div class="form-group col-md-6">
                 <!-- <label for="confirm_pass">Confirm Password</label> -->
-                <input type="password" name="confirm_pass" placeholder="Confirm Password" class="form-control input-rounded" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Confirm your password">
+                <input type="password" name="confirm_pass" placeholder="Confirm Password" class="form-control input-rounded <?php echo (!empty($confirmpass_err)) ? 'is-invalid' : ''; ?>" id="confirm_pass" autocomplete="off" data-toggle="tooltip" data-placement="top" title="Confirm your password" value="<?php echo $confirmpass; ?>">
+                <?php echo '<br>'.$confirmpass_err; ?>
               </div>
             </div>
             <input type="submit" value="Signup" name="signup" class="btn gradient-5 text-white btn-block rounded mb-4 btn-rounded mt-2">
