@@ -30,8 +30,8 @@ body, html{
   background: linear-gradient(to right, #ff416c, #ff4b2b);  
   position: absolute;
   top: 6%;
-  left: 50%;
-  width: 50%;
+  left: 40%;
+  width: 20%;
   height: 94%;
   transform: skew(0deg);
   z-index: 0;
