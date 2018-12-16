@@ -79,6 +79,13 @@ $(document).ready(function(){
     $('#card-hover').removeClass('shadow-lg');
   });
 
+    //   Alerts
+    window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 4000);
+
   // Type js
   var typed = new Typed('.words', {
     strings: ["Write. ✏️", "Chat. 💬", "Connect. 🤝", "Discuss. 🗣️", "Blog.", "Stand-out ✋", "Share.", " Fun."],
