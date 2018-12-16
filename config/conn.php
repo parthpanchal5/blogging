@@ -1,5 +1,5 @@
 <?php 
- $conn = mysqli_connect("localhost", "parth", "root", "blogging");  
+ $conn = mysqli_connect("localhost", "root", "root", "blogging");  
 
  if(!$conn){
    echo "<b>Connection: </b> <span style='color: red; font-weight: bold;'>Error 🔴</span> <br> => " . mysqli_connect_error();

@@ -1,3 +1,44 @@
+<?php
+  include 'config/conn.php';
+
+  // Check for submit
+  if(isset($_POST['login'])){
+    // init err vars
+    $userinput_err = $password_err = $global_err = '';
+
+    $userinput = mysqli_real_escape_string($conn, $_POST['userinput']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+    // Check for empty vars
+    if(empty($userinput) && empty($password)){
+      $global_err = '<div class="alert alert-danger alert-dismissible fade show animated tada" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <strong>All fields are required</strong>
+                    </div>';
+    }
+    else{
+      if(empty($userinput)){
+        $userinput_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeInDown" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Firstname is required</strong>
+                          </div>';
+      }if(empty($password)){
+        $password_err = '<div class="alert alert-danger alert-dismissible fade show animated fadeInDown" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <strong>Password is required</strong>
+                          </div>';
+      }
+    }
+  }
+?>
+
+
 <?php include 'inc/header.php';?>
 
 <!--Navbar-->
@@ -18,15 +59,17 @@
         <div class="card bg-white shadow p-1 mb-1 text-black mb-5 pt-2 animated " id="card-hover">
           <img class="card-img-top" alt="">
           <div class="card-body">
-            <h4 class="card-title text-center">Login</h4><hr>
-            <form action="home.php" method="GET">
+            <h4 class="card-title text-center">Login</h4><?php echo $global_err; ?><hr>
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
               <div class="form-group">
                 <!-- <label for="Username or Email">Username or email</label> -->
-                <input type="text" class="form-control mt-3 mb-3 input-rounded" name="userinput" placeholder="Username or Email" autofocus data-toggle="tooltip" data-placement="top" title="Username or email">
+                <input type="text" class="form-control mt-3 mb-3 input-rounded <?php echo (!empty($userinput_err)) ? 'is-invalid' : ''; ?>" name="userinput" placeholder="Username or Email" autofocus data-toggle="tooltip" data-placement="top" title="Username or email" value="<?php echo $userinput; ?>">
+                <?php echo $userinput_err; ?>
               </div>
               <div class="form-group">
                 <!-- <label for="Password">Password</label> -->
-                <input type="password" class="form-control input-rounded" name="password" placeholder="Password" data-toggle="tooltip" data-placement="top" title="Password">
+                <input type="password" class="form-control mt-3 mb-3 input-rounded <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" name="password" placeholder="Password" data-toggle="tooltip" data-placement="top" title="Password" value="<?php echo $password; ?>">
+                <?php echo $password_err; ?>
               </div>
               <div class="form-group">
                 <div class="custom-control custom-checkbox mr-sm-2">
