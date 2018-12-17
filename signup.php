@@ -18,7 +18,7 @@
 
     // Check for empty vars
     if(empty($firstname) && empty($lastname) && empty($email) && empty($username) && empty($birthday) && empty($phone) && empty($password) && empty($confirmpass)){
-      $global_err = '<div class="alert alert-danger alert-dismissible fade show animated tada" role="alert">
+      $global_err = '<div class="alert alert-danger alert-dismissible fade show animated shake" role="alert">
                       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                       </button>
